@@ -1,0 +1,30 @@
+Character
+- name: string
+- level: int
+- HP: int
+- equipAccessory(accessory: Accessory): void
+- getStats(): void
+
+Warrior (extends Character) : นักรบมีพลังโจมตีทางกายภาพสูง
+- baseAttack: int
+- Attack(): void
+- Block(): void
+
+Mage (extends Character)  : นักเวทย์เน้นการใช้คาถาโจมตีระยะไกล
+- magicPower: int
+- castSpell(spellName: string): void
+
+---------------------------------------------------------
+
+Accessory
+- name: string
+- description: string
+- applyEffect(character: Character): void
+
+Ring (extends Accessory)  : แหวนเพิ่มพลังเวทมนตร์
+- magicBoost: int
+- applyEffect(character: Character): void
+
+Gloves (extends Accessory)  : ถุงมือเพิ่มพลังโจมตี
+- attackBoost: int
+- applyEffect(character: Character): void

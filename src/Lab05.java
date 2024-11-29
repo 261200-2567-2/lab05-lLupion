@@ -14,6 +14,13 @@ public class Lab05 {
 
         System.out.println();
 
+        System.out.println("[ Battle ]");
+        warrior.attack(mage);
+        mage.attack(warrior);
+        warrior.attack(mage);
+
+        System.out.println();
+
         mage.getStats();
         mage.castSpell("Fireball");
         mage.equipAccessory(magicRing);

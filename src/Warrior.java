@@ -1,5 +1,5 @@
 class Warrior extends Character {
-    private double attack;
+    double attack;
 
     public Warrior(String name, int level) {
         super(name, level);
@@ -7,15 +7,21 @@ class Warrior extends Character {
     }
 
     double calculateAttack() {
-        return baseAttack + 20; // ตัวอย่าง: คำนวณพลังโจมตีจาก baseAttack
+        return baseAttack + 20;
     }
 
-    // Method to increase attack when an accessory (like Gloves) is applied
     public void increaseAttack(double boost) {
         this.attack += boost;
         System.out.println(name + "'s attack increased by " + boost + " to " + attack);
     }
 
+    public void attack(Character target) {
+        if (!target.isDead()) {
+            attackCharacter(target, this.attack);
+        } else {
+            System.out.println(target.name + " is already defeated!");
+        }
+    }
 
     @Override
     protected String getClassType() {

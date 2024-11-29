@@ -7,13 +7,20 @@ class Mage extends Character {
     }
 
     double calculateMagicPower() {
-        return baseAttack + 20; // Example: Magic Power derived from baseAttack
+        return baseAttack + 20;
     }
 
-    // Method to increase magic power when an accessory (like a Ring) is applied
     public void increaseMagicPower(double boost) {
         this.magicPower += boost;
         System.out.println(name + "'s magic power increased by " + boost + " to " + magicPower);
+    }
+
+    public void attack(Character target) {
+        if (!target.isDead()) {
+            attackCharacter(target, this.magicPower);
+        } else {
+            System.out.println(target.name + " is already defeated!");
+        }
     }
 
     @Override

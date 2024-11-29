@@ -27,6 +27,19 @@ abstract class Character implements RPGCharacter {
 
     abstract String getClassType();
 
+    public void attackCharacter(Character target, double attackPower) {
+        target.HP -= attackPower;
+        if (target.HP < 0) {
+            target.HP = 0;
+        }
+        System.out.println(this.name + " attacked " + target.name + " for " + attackPower + " damage!");
+        System.out.println(target.name + "'s remaining HP: " + target.HP);
+    }
+
+    public boolean isDead() {
+        return this.HP <= 0;
+    }
+
     @Override
     public void equipAccessory(Accessory accessory) {
         System.out.println(name + " equipped " + accessory.getName());
